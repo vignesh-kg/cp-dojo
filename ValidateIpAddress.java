@@ -15,6 +15,37 @@ public class ValidateIpAddress {
 
 class Solution {
   public String validIPAddress(String queryIP) {
+    if(queryIP.contains(".")){
+      String[] ipParts = queryIP.split("\\.",-1);
+      if(ipParts.length != 4) return "Neither";
+      for(String ipPart : ipParts){
+        if(ipPart.isEmpty() || (ipPart.length() > 1 && ipPart.startsWith("0"))) return "Neither";
+        try{
+          int part = Integer.parseInt(ipPart);
+          if(part < 0 || part > 255) return "Neither";
+        } catch(NumberFormatException ex){
+          return "Neither";
+        }
+      }
+      return "IPv4";
+    } else if (queryIP.contains(":")){
+      String[] ipParts = queryIP.split("\\:",-1);
+      if(ipParts.length != 8) return "Neither";
+      for(String ipPart : ipParts){
+        if(ipPart.isEmpty() || ipPart.length() > 4) return "Neither";
+        try{
+          int part = Integer.parseInt(ipPart, 16);
+          if(part < 0 || part > Math.pow(2, 16)-1) return "Neither";
+        } catch(NumberFormatException ex) {
+          return "Neither";
+        }
+      }
+      return "IPv6";
+    }
+    return "Neither";
+  }
+
+  public String validIPAddressUsingRegex(String queryIP) {
     String chunkIPv4 = "([0-9]|[1-9][0-9]|1[0-9][0-9]|2[0-4][0-9]|25[0-5])";
     Pattern patternIPV4 = Pattern.compile(
         "^(" + chunkIPv4 + "\\.){3}" + chunkIPv4 + "$"

@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class AddTwoNumbers {
   public static void main(String[] args) {
     int[] input = new int[] { 2, 7, 11, 15 };

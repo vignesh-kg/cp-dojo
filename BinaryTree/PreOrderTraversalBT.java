@@ -1,6 +1,8 @@
 package BinaryTree;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.function.Consumer;
 
 public class PreOrderTraversalBT {
   public static void main(String[] args) {
@@ -35,14 +37,19 @@ class TreeNode {
 class Solution {
   public List<Integer> preorderTraversal(TreeNode root) {
     List<Integer> preOrder = new ArrayList<>();
-    dfs(root, preOrder);
-    return preOrder;
-  }
+    Consumer<TreeNode> dfs = new Consumer<TreeNode>() {
+      @Override
+      public void accept(TreeNode node) {
+        Consumer<TreeNode> recursiveDFS = this::accept;
+        if (node == null)
+          return;
+        preOrder.add(node.val);
+        recursiveDFS.accept(node.left);
+        recursiveDFS.accept(node.right);
+      }
 
-  private void dfs(TreeNode root, List<Integer> preOrder){
-    if(root == null) return;
-    preOrder.add(root.val);
-    dfs(root.left, preOrder);
-    dfs(root.right, preOrder);
+    };
+    dfs.accept(root);
+    return preOrder;
   }
 }

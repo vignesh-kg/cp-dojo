@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.function.Consumer;
 import java.util.ArrayList;
 
-public class PostOrderTraversalBT {
+public class InOrderTraversalUsingConsumer {
   public static void main(String[] args) {
     TreeNode root = new TreeNode(1, null, new TreeNode(2, new TreeNode(3), null));
     Solution s = new Solution();
-    System.out.println(s.postorderTraversal(root));
+    System.out.println(s.inorderTraversal(root));
   }
 }
 
@@ -35,19 +35,19 @@ class TreeNode {
 }
 
 class Solution {
-  public List<Integer> postorderTraversal(TreeNode root) {
-    List<Integer> postOrder = new ArrayList<>();
-    Consumer<TreeNode> dfs = new Consumer<TreeNode>(){
+  public List<Integer> inorderTraversal(TreeNode root) {
+    List<Integer> inOrder = new ArrayList<>();
+    Consumer<TreeNode> dfs = new Consumer<TreeNode>() {
       @Override
       public void accept(TreeNode node){
-        Consumer<TreeNode> recursiveDFS = this::accept;
         if(node == null) return;
+        Consumer<TreeNode> recursiveDFS = this::accept;
         recursiveDFS.accept(node.left);
+        inOrder.add(node.val);
         recursiveDFS.accept(node.right);
-        postOrder.add(node.val);
       }
     };
     dfs.accept(root);
-    return postOrder;
+    return inOrder;
   }
 }

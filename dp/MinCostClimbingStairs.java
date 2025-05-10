@@ -1,7 +1,5 @@
 package dp;
 
-import java.util.function.BiFunction;
-
 public class MinCostClimbingStairs {
   public static void main(String[] args) {
     Solution s = new Solution();

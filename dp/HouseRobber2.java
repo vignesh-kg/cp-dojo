@@ -1,8 +1,5 @@
 package dp;
 
-import java.util.function.BiFunction;
-import java.util.function.Function;
-
 public class HouseRobber2 {
   public static void main(String[] args) {
     Solution s = new Solution();

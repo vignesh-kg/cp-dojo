@@ -30,6 +30,7 @@ class ListNode {
 }
 
 class Solution {
+  @SuppressWarnings("empty-statement")
   public ListNode reverseList(ListNode head) {
     ListNode prev = null;
     for (ListNode temp = null; head != null; temp = head.next, head.next = prev, prev = head, head = temp)

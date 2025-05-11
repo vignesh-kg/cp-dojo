@@ -1,5 +1,3 @@
-package linkedlist;
-
 public class MaxTwinSumOfLL {
 
     public static void main(String[] args) {

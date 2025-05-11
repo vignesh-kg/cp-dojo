@@ -1,5 +1,3 @@
-package linkedlist;
-
 public class DeleteMiddleNodeOfLL {
 
     public static void main(String[] args) {

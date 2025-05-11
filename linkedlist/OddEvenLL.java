@@ -1,5 +1,3 @@
-package linkedlist;
-
 public class OddEvenLL {
 
   public static void main(String[] args) {

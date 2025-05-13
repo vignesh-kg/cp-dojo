@@ -22,7 +22,8 @@ class Solution {
       int[] prev = new int[str2.length+1]; 
       //Base case
       prev[0] = 0;
-
+      //prev = i-1
+      //curr = i
       for(int i = 1; i <= str1.length; i += 1){
         int[] cur = new int[str2.length+1];
         for(int j = 1; j <= str2.length; j += 1){

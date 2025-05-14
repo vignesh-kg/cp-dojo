@@ -21,7 +21,7 @@ class Solution {
                     cur[j] = 1;
                 } else {
                     int up = 0, left = 0;
-                    if (i > 0) { //Bot can climb up
+                    if (i > 0) { //Bot can climb down
                         up = prev[j];
                     }
                     if (j > 0) { // Bot can go left

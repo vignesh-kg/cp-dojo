@@ -18,6 +18,7 @@
 # vendor/
 
 .idea
+target
 
 # Go workspace file
 go.work

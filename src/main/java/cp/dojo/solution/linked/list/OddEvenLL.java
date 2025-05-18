@@ -5,7 +5,7 @@ import cp.dojo.structure.ListNode;
 public class OddEvenLL {
 
   public static void main(String[] args) {
-    cp.dojo.solution.list.OddEvenLL s = new cp.dojo.solution.list.OddEvenLL();
+    OddEvenLL s = new OddEvenLL();
     ListNode head = new ListNode(1, new ListNode(2, new ListNode(3, new ListNode(4, new ListNode(5)))));
     ListNode newHead = s.oddEvenList(head);
     while (newHead != null) {

@@ -5,7 +5,7 @@ import cp.dojo.structure.ListNode;
 public class DeleteMiddleNodeOfLL {
 
   public static void main(String[] args) {
-    cp.dojo.solution.list.DeleteMiddleNodeOfLL s = new cp.dojo.solution.list.DeleteMiddleNodeOfLL();
+    DeleteMiddleNodeOfLL s = new DeleteMiddleNodeOfLL();
     ListNode head = new ListNode(1, new ListNode(3, new ListNode(4)));
     System.out.println("1 3 4");
     ListNode newHead = s.deleteMiddle(head);

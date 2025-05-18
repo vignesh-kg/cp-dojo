@@ -5,7 +5,7 @@ import cp.dojo.structure.ListNode;
 public class ReverseLL {
 
   public static void main(String[] args) {
-    ReverseLL s = new ReverseLL();
+    cp.dojo.solution.list.ReverseLL s = new cp.dojo.solution.list.ReverseLL();
     ListNode head = new ListNode(1, new ListNode(3, new ListNode(4)));
     ListNode newHead = s.reverseList(head);
     while (newHead != null) {

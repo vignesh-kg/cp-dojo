@@ -6,7 +6,7 @@ public class MaxTwinSumOfLL {
 
   public static void main(String[] args) {
     ListNode head = new ListNode(4, new ListNode(2, new ListNode(2, new ListNode(3))));
-    System.out.print(new MaxTwinSumOfLL().pairSum(head));
+    System.out.print(new cp.dojo.solution.list.MaxTwinSumOfLL().pairSum(head));
   }
 
   public int pairSum(ListNode head) {

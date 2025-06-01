@@ -6,7 +6,6 @@ public class JumpGame2 {
         JumpGame2 s = new JumpGame2();
         System.out.println(s.jump(new int[]{2, 3, 1, 1, 4}));
         System.out.println(s.jump(new int[]{2, 3, 0, 1, 4}));
-        System.out.println(s.jump(new int[]{2, 3, 1, 1, 4}));
         System.out.println(s.jump(new int[]{0}));
         System.out.println(s.jump(new int[]{2, 0, 0}));
     }
@@ -15,19 +14,17 @@ public class JumpGame2 {
         if (nums.length <= 1) {
             return 0;
         }
-        int maxJumpPossible = 0, curJumpPosition = 0, jumpSoFar = 0;
-        for (int i = 0; i < nums.length; i += 1) {
-            maxJumpPossible = Math.max(maxJumpPossible, i + nums[i]);
-            if (maxJumpPossible >= nums.length - 1) {
-                jumpSoFar += 1;
-                break;
+        int jumps = 0, left = 0, right = 0;
+        while (right < nums.length-1){
+            int farthest = 0;
+            for(int index = left; index <= right; ++index){
+                //farthest position that can be reached with current Jump
+                farthest = Math.max(index+nums[index], farthest);
             }
-            //Increment Jump as we reach current index
-            if (curJumpPosition == i) {
-                curJumpPosition = maxJumpPossible;
-                jumpSoFar += 1;
-            }
+            left = right+1;
+            right = farthest;
+            ++jumps;
         }
-        return jumpSoFar;
+        return jumps;
     }
 }

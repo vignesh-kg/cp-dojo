@@ -1,3 +1,5 @@
+package cp.dojo.solution.math;
+
 import java.util.Arrays;
 
 public class PlusOne {

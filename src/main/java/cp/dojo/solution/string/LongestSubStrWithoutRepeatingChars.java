@@ -25,7 +25,7 @@ public class LongestSubStrWithoutRepeatingChars {
         }
       }
 
-      maxLen = maxLen < (right-left+1) ? (right-left+1) : maxLen;
+      maxLen = Math.max(maxLen, (right - left + 1));
       seen.add(sArr[right]);
     }
     return maxLen;

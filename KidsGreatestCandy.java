@@ -15,10 +15,11 @@ public class KidsGreatestCandy {
                 maxCandy = candy;
             }
         }
-        List<Boolean> result = new ArrayList<>();
-        for (int candy : candies) {
-            result.add(candy+extraCandies >= maxCandy);
+        var result = new Boolean[candies.length];
+        for (int i = 0; i < candies.length; ++i) {
+            result[i] = candies[i] + extraCandies >= maxCandy;
         }
-        return result;
+
+        return Arrays.asList(result);
     }
 }

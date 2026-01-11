@@ -1,8 +1,11 @@
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
 
 public class Team {
     private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    private static BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(System.out));
 
     private static int readInt() {
         try {
@@ -36,16 +39,21 @@ public class Team {
     }
 
     public static void main(String[] args) {
-        int n = readInt();
-        int res = 0;
-        for (int i = 0; i < n; ++i) {
-            int curRes = 0;
-            int[] vote = readIntArray();
-            curRes += vote[0] + vote[1] + vote[2];
-            if (curRes >= 2) {
-                ++res;
+        try {
+            int n = readInt();
+            int res = 0;
+            for (int i = 0; i < n; ++i) {
+                int curRes = 0;
+                int[] vote = readIntArray();
+                curRes += vote[0] + vote[1] + vote[2];
+                if (curRes >= 2) {
+                    ++res;
+                }
             }
+            writer.write(String.valueOf(res));
+            writer.newLine();
+            writer.close();
+        } catch (Exception ex) {
         }
-        System.out.println(res);
     }
 }

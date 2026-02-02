@@ -1,3 +1,4 @@
+package LinkedList;
 import java.util.function.Function;
 
 import structs.ListNode;

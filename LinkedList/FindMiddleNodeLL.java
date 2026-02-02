@@ -1,3 +1,4 @@
+package LinkedList;
 import structs.ListNode;
 
 public class FindMiddleNodeLL {

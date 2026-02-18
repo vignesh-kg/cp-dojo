@@ -30,6 +30,17 @@ public class ListNode {
       } else {
         System.out.println(head.val);
       }
+      head = head.next;
     }
+  }
+
+  public static ListNode createLL(int[] nums){
+    ListNode dummy = new ListNode();
+    ListNode copy = dummy;
+    for(int num : nums){
+      dummy.next = new ListNode(num);
+      dummy = dummy.next;
+    }
+    return copy.next;
   }
 }

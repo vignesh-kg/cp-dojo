@@ -1,5 +1,7 @@
 package grab;
 
+import java.util.ArrayDeque;
+import java.util.Deque;
 import java.util.Stack;
 
 public class ValidParantheses {
@@ -8,7 +10,7 @@ public class ValidParantheses {
     }
 
     public boolean isValid(String s) {
-        Stack<Character> stack = new Stack<>();
+        Deque<Character> stack = new ArrayDeque<>();
         for(char ch : s.toCharArray()){
             switch(ch){
                 case '(':
